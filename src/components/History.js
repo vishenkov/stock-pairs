@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 
-class Home extends Component {
+class History extends Component {
   componentWillMount() {
-    this.props.requestStocks();
+    console.log(this.props);
+    const { stock } = this.props.match.params;
+    this.props.requestStockHistory(stock);
   }
 
   handleClick = stock => event => {
@@ -12,17 +14,16 @@ class Home extends Component {
   }
 
   render() {
-    const props = this.props;
-    const { stocks } = this.props;
-    console.log(props.stocks);
+    const { history } = this.props;
+    console.log(history);
     return (<div>
-    <h1>Home</h1>
-    {Object.keys(stocks).map(stock =>
+    <h1>History</h1>
+    {/* {Object.keys(stocks).map(stock =>
       <button key={stock} onClick={this.handleClick(stock)}>{stock}</button>
-    )}
+    )} */}
     </div>
   );
   }
 }
 
-export default Home;
+export default History;

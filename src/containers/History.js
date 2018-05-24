@@ -2,25 +2,25 @@ import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {
-  requestStocks
+  requestStockHistory
 } from '../actions';
 
-import Home from '../components/Home'
+import History from '../components/History'
 
 
 
 const mapStateToProps = state => ({
-  stocks: state.stocks.stocks,
-  isFetchingStocks: state.stocks.isFetchingStocks,
+  history: state.history.history,
+  isFetchingHistory: state.stocks.isFetchingHistory,
 });
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      requestStocks,
+      requestStockHistory,
       push
     },
     dispatch
   );
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(History);

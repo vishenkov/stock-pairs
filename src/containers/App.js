@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import Home from './Home';
 import About from '../components/About';
+import History from './History';
 
 class App extends Component {
   render() {
@@ -13,8 +14,9 @@ class App extends Component {
         </header>
 
         <main>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/about-us" component={About} />
+          <Home />
+          {/* <Route exact path="/" component={Home} /> */}
+          <Route exact path="/:stock" component={History} />
         </main>
       </div>
     )
