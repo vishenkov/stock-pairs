@@ -1,6 +1,7 @@
 {
   "name": "stock-pairs",
   "version": "0.1.0",
+  "homepage" : "http://vishenkov.github.io/stock-pairs",
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.1.1",
