@@ -5,7 +5,7 @@ import {
   requestStocks
 } from '../actions';
 
-import Home from '../components/Home'
+import Pairs from '../components/Pairs'
 
 
 
@@ -23,4 +23,4 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Pairs);

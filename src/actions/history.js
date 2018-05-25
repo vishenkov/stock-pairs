@@ -29,9 +29,7 @@ export const requestStockHistory = stock =>
     try {
       const endDate = Math.floor(Date.now() / 1000);
       const startDate = endDate - 24 * 60 * 60;
-      console.log('PARAMS', stock, startDate, endDate);
       // const history = await axios.get(`https://poloniex.com/public?command=returnTradeHistory&currencyPair=${stock}&start=${startDate}&end=${endDate}`);
-      // const history = await axios.get('http://jsonplaceholder.typicode.com/posts');
       // return dispatch(receiveHistory(history.data));
       return dispatch(receiveHistory(fake));
     } catch (error) {

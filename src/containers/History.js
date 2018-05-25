@@ -11,7 +11,7 @@ import History from '../components/History'
 
 const mapStateToProps = state => ({
   history: state.history.history,
-  isFetchingHistory: state.stocks.isFetchingHistory,
+  isFetchingHistory: state.history.isFetchingHistory,
 });
 
 const mapDispatchToProps = dispatch =>

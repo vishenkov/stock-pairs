@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import HistoryItem from './HistoryItem';
+import Progress from './Progress';
 
 class History extends Component {
   componentWillMount() {
@@ -14,13 +16,37 @@ class History extends Component {
   }
 
   render() {
-    const { history } = this.props;
-    console.log(history);
-    return (<div>
-    <h1>History</h1>
-    {/* {Object.keys(stocks).map(stock =>
-      <button key={stock} onClick={this.handleClick(stock)}>{stock}</button>
-    )} */}
+    const { history, isFetchingHistory } = this.props;
+    const { stock } = this.props.match.params;
+    console.log(isFetchingHistory);
+    return (
+      <div className="jumbotron jumbotron-fluid">
+        <div className="container">
+          <h2 className="lead">{stock} 24 hours history</h2>
+          {isFetchingHistory
+            ? <Progress />
+            :  <table className="table table-sm">
+                <thead className="thead-dark">
+                  <tr>
+                    <th scope="col">#id</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Rate</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {history.map(stock =>
+                    <HistoryItem
+                      key={stock.globalTradeID}
+                      data={stock}
+                    />
+                  )}
+                </tbody>
+              </table>
+          }
+        </div>
     </div>
   );
   }
