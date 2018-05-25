@@ -1,10 +1,11 @@
 {
   "name": "stock-pairs",
   "version": "0.1.0",
-  "homepage" : "http://vishenkov.github.io/stock-pairs",
+  "homepage": "http://vishenkov.github.io/stock-pairs",
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.1.1",
+    "gh-pages": "^1.1.0",
     "history": "^4.7.2",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
@@ -17,6 +18,8 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
